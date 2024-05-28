@@ -1,0 +1,21 @@
+.hero{
+  background: url('../../../assets/images/noisebg.png');
+  height: 100vh;
+  display: flex;
+  flex-wrap: no;
+  justify-content: center;
+  align-items: center;
+
+  .hero-button{
+     background: linear-gradient(90deg, rgb(20, 152, 235) 1.64%, rgb(150, 45, 227) 100%);
+     color: white;
+     border: none;
+  }
+
+  .imagery{
+    height: 50%;
+    width: 100%;
+    background: url('../../../assets/images/cryptocircle.png');
+    background-size: cover;
+  }
+}

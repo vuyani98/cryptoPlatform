@@ -9,9 +9,12 @@
   "author": "Vuyani Ncube",
   "license": "ISC",
   "dependencies": {
+    "emailjs": "^4.0.3",
     "express": "^4.19.2",
     "hi-base32": "^0.5.1",
     "mongoose": "^8.4.0",
-    "otpauth": "^9.2.4"
+    "otpauth": "^9.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }
