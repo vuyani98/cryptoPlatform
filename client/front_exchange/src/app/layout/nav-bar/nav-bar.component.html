@@ -1,1 +1,57 @@
-<p>nav-bar works!</p>
+<div class="menu" style="display: flex; justify-content: space-between; z-index: 1;">
+
+  <span class="logo" style="float: left;">
+    <img src="assets/images/flogo.png" alt="">
+  </span>
+
+  <nav class="desktop">
+    <span class="options" style="float: right;">
+      <ul>
+        <li><a href="#">Exchange</a></li>
+        <li><a href="#">Investments</a></li>
+      </ul>
+    </span>
+  </nav>
+
+
+  <nav class="desktop">
+    <span style="float: right;">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#"> <fa-icon [icon]="faUser"></fa-icon> </a></li>
+      </ul>
+    </span>
+  </nav>
+
+  <div class="mobile" (click)="show_popup('menu')">
+    <div class="icon">
+      <div class="burger" >
+        <div class="burger-menu" [@cross]="isMobileOpen ? 'crossed' : 'straight' ">
+          <div id="top-line" [ngStyle]="{transform : top_line_style}"></div>
+          <div id="center-line" [ngStyle]="{opacity : center_line_style}"></div>
+          <div id="bottom-line" [ngStyle]="{transform : bottom_line_style}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="mobile menu top" [ngStyle]="{ display : isMobileOpen ? 'flex' : 'none', 'position': 'fixed', 'background-color': 'white', 'padding': '8px 0'}">
+  <span style="float: right; text-align: end;">
+    <ul>
+      <li style="padding: 8px 0;"><a href="#">Dashboard</a></li>
+      <li style="padding: 8px 0;"><a href="#">Portfolio</a></li>
+      <li style="padding: 8px 0;"><a href="#"> <fa-icon [icon]="faUser"></fa-icon> </a></li>
+    </ul>
+  </span>
+</div>
+<div class="mobile menu bottom">
+  <div class="left">
+    <a href="#" style="color: white;">Exchange</a>
+  </div>
+  <div class="right">
+    <a href="#" style="color: white;">Investments</a>
+  </div>
+</div>
