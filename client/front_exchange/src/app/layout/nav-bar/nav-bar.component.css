@@ -15,9 +15,13 @@ li{
 
 }
 
+a{
+  color: #2b2e4a;
+}
+
 a:link{
   text-decoration: none;
-  color: #2b2e4a;
+
   font-weight: bold;
   font-size: small;
   font-family: 'Roboto Mono';

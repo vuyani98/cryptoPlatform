@@ -19,9 +19,12 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@emailjs/browser": "^4.3.3",
     "@fortawesome/angular-fontawesome": "^0.15.0",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "emailjs": "^4.0.3",
     "rxjs": "~7.8.0",
+    "smtpjs": "^0.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

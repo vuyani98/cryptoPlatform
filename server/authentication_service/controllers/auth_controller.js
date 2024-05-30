@@ -1,51 +1,29 @@
 const User = require('../Models/userModel');
-
+const encrypt = require('./encryption');
+const bcrypt = require('bcryptjs')
 
 module.exports.login = async function(req, res){
 
     console.log('trying to login');
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    let user = await User.findOne({username : username});
+    let user = await User.findOne({email : email});
     
     // check if user exists
     if (user != undefined){
 
-        let passwordCorrect = (user.password == password) ? true : false;
+        let passwordCorrect = bcrypt.compareSync(password, user.password);
 
         //if user is found and the password is correct
         if (passwordCorrect){
             console.log('User found');
-           /* const email = await import('emailjs');
-            const client = new email.SMTPClient({
-                user: "vyanincube@gmail.com",
-                password: "@Jesusisking143",
-                host: 'smtp.gmail.com',
-                ssl: true
-            });
-
-            try {
-
-                const message = await client.sendAsync({
-                    text: 'Test 1',
-                    from: '<vyanincube@gmail.com>',
-                    to: '<nvuyani307@gmail.com>',
-                    subject: 'test emails'
-                });
-                console.log(message);
-
-            }
-            catch (err){
-                console.error(err);
-            } */
-
-            res.status(200).send({"message" : "Login successful", "user" : user});
+            res.send({"message" : "Login successful", "user" : user.email});
         }
 
         //if user exists but the password is wrong
         else {
             console.log('Wrong password');
-            res.status(403).send({"message" : "Wrong password"})
+            res.send({"error" : "Wrong password", status: 403})
         }
 
     }
@@ -54,54 +32,59 @@ module.exports.login = async function(req, res){
     //if user does not exists
     else {
         console.log('User not found');
-        res.status(404).send({"message": "User not found"});
+        res.send({"error": "User not found", status: 404});
     }
 };
 
 module.exports.register = async function(req, res) {
 
-    console.log('Register controller function called');
-    console.log(req.body)
-    const { username, email, phoneNumber, password } = req.body;
-    
-    //check if user is already registered
-    let existingUser = await User.find({email : email});
 
-    if( existingUser ){
+    console.log('Register controller function called');
+   // console.log(req.body)
+    const { username, email, password } = req.body;
+
+    let salt = bcrypt.genSaltSync(10);
+    let hashedPassword = bcrypt.hashSync(password, salt);
+
+    //check if user is already registered
+    let existingUser = await User.findOne({email : email});
+
+    if(existingUser){
+        
         console.log('User with the same email already exists');
-        res.status(403).send({body : "User with the same email already exists"});
+        res.send({error : 'User already exists', status: 403})
+        
     }
 
-    else if( username && email && phoneNumber && password){
+    else if( username && email && password){
 
         try{
             const user = new User({
                 username : username,
                 email: email,
-                phoneNumber: phoneNumber,
-                password: password
+                password: hashedPassword
             });    
             
             //registering new user to database
-            user.save()
+            await user.save()
                 .then( (result) => {
-                    console.log(result);
                     console.log("User registered successfully");
-                    res.sendStatus(201);
                 })
                 .catch((error) => {
                     console.log(error);
-                    res.sendStatus(400);
-                });
+                    res.send({error: 'Bad request', status: 400});
+            });
+
+            res.send({user : user.id});
         }
         catch{
             console.log('Internal Server Error');
-            res.sendStatus(500);
+            res.send({status : 500, "error": "Internal Server Error"});
         }
     }
     else{
         console.log('Missing parameters');
-        res.sendStatus(400)
+        res.error({status: 400, error: "Missing Parameters"})
     }
 
 }

@@ -4,13 +4,17 @@
     <div class="heading">
 
       <h6>ALL-IN-ONE PLATFORM</h6>
-      <h1 style="font-size: 4vw !important;"> <span class="black">Crypto - Exchange,</span>  <span class="thin"> Options & Futures Trading</span> and <span class="black">Gold Investments</span>.</h1>
-      <button mat-flat-button class="hero-button">GET STARTED</button>
+      <h1 > <span class="black">Crypto - Exchange,</span>  <span class="thin"> Options & Futures Trading</span> and <span class="black">Gold Investments</span>.</h1>
+      <button mat-flat-button class="hero-button" routerLink="auth/signup">GET STARTED</button>
 
     </div>
     <div  class="imagery">
-      <img src="assets/images/cryptocircle.png" alt="" width="100%">
+    <!--  <img src="assets/images/cryptocircle.png" alt="" width="100%"> -->
+      <img src="assets/images/florid-crypto-wallet-and-online-banking.gif" alt="">
+      <div class="shadow"></div>
     </div>
   </div>
 
 </div>
+
+<app-sign-in [ngStyle]="{display : showme ? 'flex' : 'none'}"></app-sign-in>

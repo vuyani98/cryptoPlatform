@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
+import { loginStatus } from '../../../environments/environments';
 import { trigger, state, style, animate, transition, keyframes, query, stagger, group } from '@angular/animations';
 
 
@@ -85,11 +86,16 @@ import { trigger, state, style, animate, transition, keyframes, query, stagger, 
 })
 export class NavBarComponent {
    faUser = faUser;
+   isLoggedIn: boolean;
    top_line_style = "translate(0px, 0px) rotate(0deg)";
    center_line_style = 1;
    bottom_line_style = "translate(0px, 0px) rotate(0deg)";
    isMobileOpen = false;
    menu_display = "none";
+
+constructor(){
+  this.isLoggedIn = loginStatus.isLoggedIn
+}
 
   show_popup(name: string){
 

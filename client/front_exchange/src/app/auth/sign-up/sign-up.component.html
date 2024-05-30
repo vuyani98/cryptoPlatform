@@ -1,1 +1,38 @@
-<p>sign-up works!</p>
+<div style="background: url(../../../assets/images/noisebg.png); height: 90vh;">
+  <div id="sign-up-form">
+
+  <div class="container" style="padding-bottom: 25px;">
+    <h3>Sign Up</h3>
+    <div class="error-message" *ngIf="registrationError">{{errorMessage}}</div>
+    <form #signup="ngForm" [formGroup]="signupForm" (ngSubmit)="onRegister()">
+
+      <div class="input-container">
+        <input id="email" type="text" formControlName="email"  required placeholder="Email Address">
+        <div class="error-message" *ngIf="signupForm.controls.email.errors">*Enter valid email address</div>
+      </div>
+
+      <div class="input-container">
+        <input id="username" type="text" formControlName="username"  required placeholder="Username">
+      </div>
+
+      <div class="input-container">
+        <input id="password" type="password" formControlName="password" required placeholder="Password">
+        <div class="error-message" *ngIf="signupForm.controls.password.errors">*Password should have atleast 8 characters, 1 Uppercase, 1 symbol & 1 number </div>
+      </div>
+
+      <div class="input-container">
+        <input id="confirmPass" type="password" formControlName="confirmPass" required placeholder="Confirm Password">
+        <div class="error-message" *ngIf="signupForm.controls.confirmPass.value != signupForm.controls.password.value">*Passwords should match</div>
+      </div>
+
+
+      <div class="input-btn">
+        <button type="submit" [disabled]="signup.form.invalid">Sign Up</button> <br> <a routerLink="/auth/login" style="font-size: 12px;">Already have an account?</a>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+</div>
+

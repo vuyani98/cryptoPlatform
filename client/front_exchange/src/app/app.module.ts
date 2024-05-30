@@ -3,11 +3,13 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFabButton } from "@angular/material/button";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutesModule } from "./app-routes.module";
 
 import { AppComponent } from "./app.component";
 import { NavBarComponent } from "./layout/nav-bar/nav-bar.component";
 import { FooterComponent } from "./layout/footer/footer.component";
+import { provideHttpClient } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,10 +22,13 @@ import { FooterComponent } from "./layout/footer/footer.component";
     BrowserModule,
     BrowserAnimationsModule,
     MatFabButton,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers:[ provideHttpClient()]
 })
 
 export class AppModule {}

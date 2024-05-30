@@ -6,19 +6,23 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { PagesRoutesModule } from './pages-routes.module';
 import { LandingComponent } from './landing/landing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignInComponent } from '../auth/sign-in/sign-in.component';
+import { AuthModule } from '../auth/auth.module';
 
 
 
 @NgModule({
   declarations: [
     LandingComponent,
-    DashboardComponent
+    DashboardComponent,
+
   ],
   imports: [
     CommonModule,
     PagesRoutesModule,
     MatButtonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AuthModule
   ]
 })
 export class PagesModule { }

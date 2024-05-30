@@ -1,1 +1,41 @@
-<p>sign-in works!</p>
+<div style="background: url(../../../assets/images/noisebg.png); height: 90vh;">
+
+
+  <div id="sign-in-form">
+
+  <div class="container" style="padding-bottom: 25px;">
+    <h3>Log In</h3>
+    <div class="error-message" *ngIf="loginError">{{errorMessage}}</div>
+    <form #login="ngForm" [formGroup]="loginForm" (ngSubmit)="onLogin()" [ngStyle]="{display : showOTPform ? 'none' : 'block'}">
+
+      <div class="input-container">
+        <input id="email" type="text" formControlName="email"  required placeholder="Email Address">
+      </div>
+
+      <div class="input-container">
+        <input id="password" type="password" formControlName="password" required placeholder="Password">
+      </div>
+
+      <div class="input-btn">
+        <button type="submit" [disabled]="login.form.invalid">Log In</button> <br> <a routerLink="/auth/signup" style="font-size: 12px;">Don't have a account yet?</a>
+      </div>
+    </form>
+
+    <form #otp="ngForm" [formGroup]="otpForm" [ngStyle]="{ display : showOTPform ? 'block' : 'none'}" (ngSubmit)="onConfirm()">
+
+      <div class="input-container">
+        <input type="number" id="otp" formControlName="otp" required="" placeholder="OTP">
+        <div class="error-message" *ngIf="falseOTP">Wrong OTP, try again</div>
+      </div>
+
+      <div class="input-btn">
+        <button type="submit" [disabled]="!otp">Confirm</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+</div>
+
