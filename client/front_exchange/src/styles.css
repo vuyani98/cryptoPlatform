@@ -10,3 +10,23 @@ body{
 .thin{
   font-family: 'Roboto Thin';
 }
+
+@font-face {
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url(assets/fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  src: url(assets/fonts/Roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url(assets/fonts/Roboto/Roboto-Bold.ttf);
+}
