@@ -1,42 +1,81 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-
+import { Component, ElementRef, Renderer2, OnInit, AfterViewInit, HostListener, OnDestroy, ChangeDetectorRef} from '@angular/core';
+import { faPiggyBank, faWallet} from '@fortawesome/free-solid-svg-icons';
+import { RealTimeChartComponent } from '../../widgets/real-time-chart/real-time-chart.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  script = document.createElement("script");
-  container  = this.element.nativeElement.querySelector('#container');
+  faPiggyBank = faPiggyBank;
+  faWallet = faWallet;
+  private bodyClickListener?: () => void;
 
-  constructor( private element : ElementRef){
+  src = `https://s3.tradingview.com/external-embedding/embed-widget-screener.js`;
+  html = `{
+      "width": "100%",
+      "height": 550,
+      "defaultColumn": "overview",
+      "screener_type": "crypto_mkt",
+      "displayCurrency": "USD",
+      "colorTheme": "light",
+      "locale": "en"
+    }`
+
+
+  constructor( private element : ElementRef, private renderer: Renderer2, private cdref: ChangeDetectorRef){
   }
 
   ngOnInit(): void {
 
-    this.script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-    this.script.type = "text/javascript";
-    this.script.async = true;
-    this.script.innerHTML = `
-      {
-        "autosize": true,
-        "symbol": "BINANCE:BTCUSDT",
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "withdateranges": true,
-        "range": "YTD",
-        "hide_side_toolbar": false,
-        "allow_symbol_change": true,
-        "details": true,
-        "calendar": false,
-        "support_host": "https://www.tradingview.com"
-      }`;
-      this.container
+
+   this.loadScript(this.src, this.html)
   }
 
-  tradingViewWidget(){}
 
+  ngAfterViewInit(): void {
+  }
+
+  loadScript(url : string, html: string){
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = html;
+    script.src = url;
+    script.async = true;
+    script.defer = true;
+    body.appendChild(script);
+    console.log('Dashboard')
+    let symbolinks = document.getElementsByClassName('tvscreener__symbol');
+    console.log(symbolinks)
+
+    this.bodyClickListener = this.renderer.listen(
+      body,
+      'click',
+      (event) => {
+          event.preventDefault();
+          console.log(event);
+      }
+    );
+
+    /*for (let i=0; i< symbolinks.length; i++){
+      this.bodyClickListener = this.renderer.listen(
+        symbolinks[i],
+        'click',
+        (event) => {
+            event.preventDefault();
+            console.log(event);
+        }
+      );
+    }*/
+
+  }
+
+
+
+  ngOnDestroy() {
+    if (this.bodyClickListener) {
+        this.bodyClickListener();
+    }
+}
 }

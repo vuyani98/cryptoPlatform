@@ -9,13 +9,14 @@ import { AppRoutesModule } from "./app-routes.module";
 import { AppComponent } from "./app.component";
 import { NavBarComponent } from "./layout/nav-bar/nav-bar.component";
 import { FooterComponent } from "./layout/footer/footer.component";
+import { RealTimeChartComponent } from "./widgets/real-time-chart/real-time-chart.component";
 import { provideHttpClient } from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     AppRoutesModule,

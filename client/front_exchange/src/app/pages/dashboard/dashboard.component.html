@@ -1,1 +1,20 @@
-<div id="container"></div>
+<div  style="background-color:#2b2e4a">
+  <h1>Dashboard</h1>
+  <div style="display: flex; justify-content: space-around;">
+    <div style="text-align: center; font-family: 'Roboto Thin'; color: white;">
+      <h3>Wallet</h3>
+      <div><fa-icon class="fa-10x fa-light" [icon]="faWallet"></fa-icon> </div>
+      <button>Link Wallet</button>
+    </div>
+    <div style="text-align: center; font-family: 'Roboto Thin'; color: white;">
+      <h3>Assets</h3>
+      <div><fa-icon class="fa-10x fa-light" [icon]="faPiggyBank"></fa-icon></div>
+      <p>No Assets</p>
+    </div>
+  </div>
+</div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget" ></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>
+</div>

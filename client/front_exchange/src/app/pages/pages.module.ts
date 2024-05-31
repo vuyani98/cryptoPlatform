@@ -8,6 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
 import { AuthModule } from '../auth/auth.module';
+import { RealTimeChartComponent } from '../widgets/real-time-chart/real-time-chart.component';
 
 
 
@@ -15,7 +16,7 @@ import { AuthModule } from '../auth/auth.module';
   declarations: [
     LandingComponent,
     DashboardComponent,
-
+    RealTimeChartComponent
   ],
   imports: [
     CommonModule,
