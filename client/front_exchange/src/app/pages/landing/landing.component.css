@@ -204,6 +204,7 @@ a:hover{
   }
   .imagery{
     width: -webkit-fill-available;
+    height: 300px;
   }
 
   h1{
