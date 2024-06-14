@@ -1,20 +1,139 @@
-<div class="hero">
+<div class="landing">
+  <div class="hero">
 
-  <div class="container">
-    <div class="heading">
 
-      <h6>ALL-IN-ONE PLATFORM</h6>
-      <h1 > <span class="black">Crypto - Exchange,</span>  <span class="thin"> Options & Futures Trading</span> and <span class="black">Gold Investments</span>.</h1>
-      <button mat-flat-button class="hero-button" routerLink="auth/signup">GET STARTED</button>
+    <div class="container">
+      <div class="heading" style="width: 100%;">
+
+        <h1 style="margin-bottom: 0px;"> <span class="black gradient-text">Empower Your Wealth:</span> </h1>   <h1 class="thin" style=" margin-top: 0px;">Where opportunities thrive!</h1>
+        <h5 class="thin">Discover private lending networks, professionally managed funds, crypto and digital currency trading for remarkable returns. </h5>
+        <button mat-flat-button class="hero-button" href="#opp" style="margin-right: 10px; background-color: #090979;">learn more <fa-icon [icon]="faArrowDown"></fa-icon></button>
+        <button mat-flat-button class="hero-button" routerLink="auth/signup"  style="background-color: #1498eb;">invest today <fa-icon [icon]="faArrowRight"></fa-icon> </button>
+      </div>
+      <div  class="imagery">
+      <!--  <img src="assets/images/cryptocircle.png" alt="" width="100%"> -->
+        <img src="assets/images/florid-crypto-wallet-and-online-banking.gif" alt="">
+        <div class="shadow"></div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="wave">
+    <svg style="margin-top: -20px;" width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+      .path-0{
+        animation:pathAnim-0 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes pathAnim-0{
+        0%{
+          d: path("M 0,400 L 0,150 C 143.46666666666664,166.66666666666666 286.9333333333333,183.33333333333331 435,183 C 583.0666666666667,182.66666666666669 735.7333333333333,165.33333333333334 904,157 C 1072.2666666666667,148.66666666666666 1256.1333333333332,149.33333333333331 1440,150 L 1440,400 L 0,400 Z");
+        }
+        25%{
+          d: path("M 0,400 L 0,150 C 152,143.73333333333335 304,137.46666666666667 445,146 C 586,154.53333333333333 716,177.86666666666667 880,181 C 1044,184.13333333333333 1242,167.06666666666666 1440,150 L 1440,400 L 0,400 Z");
+        }
+        50%{
+          d: path("M 0,400 L 0,150 C 173.2,144 346.4,138 518,141 C 689.6,144 859.5999999999999,156 1013,159 C 1166.4,162 1303.2,156 1440,150 L 1440,400 L 0,400 Z");
+        }
+        75%{
+          d: path("M 0,400 L 0,150 C 162.13333333333333,123.86666666666667 324.26666666666665,97.73333333333333 490,92 C 655.7333333333333,86.26666666666667 825.0666666666666,100.93333333333334 984,114 C 1142.9333333333334,127.06666666666666 1291.4666666666667,138.53333333333333 1440,150 L 1440,400 L 0,400 Z");
+        }
+        100%{
+          d: path("M 0,400 L 0,150 C 143.46666666666664,166.66666666666666 286.9333333333333,183.33333333333331 435,183 C 583.0666666666667,182.66666666666669 735.7333333333333,165.33333333333334 904,157 C 1072.2666666666667,148.66666666666666 1256.1333333333332,149.33333333333331 1440,150 L 1440,400 L 0,400 Z");
+        }
+      }</style><defs><linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="5%" stop-color="#020024"></stop><stop offset="95%" stop-color="#090979"></stop></linearGradient></defs><path d="M 0,400 L 0,150 C 143.46666666666664,166.66666666666666 286.9333333333333,183.33333333333331 435,183 C 583.0666666666667,182.66666666666669 735.7333333333333,165.33333333333334 904,157 C 1072.2666666666667,148.66666666666666 1256.1333333333332,149.33333333333331 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+  </div>
+ <div class="mozilla-marg" style="margin-top: -46px; text-align: center; background: #020024;">
+
+    <h2 style="font-family: 'Roboto'; color: #ffffffcf;" id="opp">Featured Opportunities</h2>
+
+    <div id="ticker" style="margin-top: 80px;"></div>
+    <app-ticker-tape></app-ticker-tape>
+
+    <div style="display: flex; flex-direction: column; padding: 20px;">
+
+
+      <div class="opportunity reverse" style="display: flex;">
+        <div class="opp-container">
+          <h3 class="header mono gradient-text">1. Managed Mutual Funds <img src="../../../assets/images/mutual (2).png" alt=""> </h3>
+          <p class="info">Experience the power of professionally managed mutual funds tailored to your investment objectives.
+            Our expert team selects and oversees a diverse portfolio of assets, aiming to maximize returns while minimizing risks.
+            Benefit from the convenience of passive investing with the potential for long-term growth.
+            Whether you're planning for retirement or saving for a major milestone, our mutual funds offer a reliable path to financial success.
+          </p>
+        </div>
+        <div class="opp-illustration">
+          <img src="../../../assets/images/haze-financial-analytics-and-calculator-for-accounting-1.png" alt="">
+        </div>
+      </div>
+
+      <div class="opportunity" style="display: flex;">
+        <div class="opp-illustration">
+          <img src="../../../assets/images/haze-srypto-analytics-on-computer-monitor.png" alt="">
+        </div>
+        <div class="opp-container">
+          <h3 class="header mono gradient-text">2. Cryptocurrency Investment <img src="../../../assets/images/crypto (2).png" alt=""> </h3>
+          <p class="info">Join in the digital revolution with our cryptocurrency investment opportunities.
+            Explore the dynamic world of digital assets, including major cryptocurrencies nd carefully selected altcoins.
+            Seize the potential for high returns in this rapidly evolving market while diversifying your invetsment portfolio.
+            Our platfomr caters to a spectrum of investor preferences, offering short-term futures trading, long-term crypto mining, and arbitrage trading opportunities.
+            Tailor your investment strategy to align with your individual needs and goals, leveraging our comprehensive suite of options to optimize your financial journey.
+          </p>
+        </div>
+      </div>
+
+      <div class="opportunity reverse">
+        <div class="opp-container">
+          <h3 class="header mono gradient-text">3. Peer-to-Peer Lending <img src="../../../assets/images/crypto (2).png" alt=""> </h3>
+          <p class="info">Diversify your portfolio with our peer-to-peer lending platform.
+            Connect with borrowers seeking financing for various purposes, from personal loans to small business funding.
+            Enjoy attractive returns while helping individuals achieve their financial goals. Our platform ensures transparent lending processes and robust
+            risk management strategies for peace of mind.
+          </p>
+        </div>
+        <div class="opp-illustration">
+          <img src="../../../assets/images/haze-people-making-donations-1.png" alt="">
+        </div>
+      </div>
 
     </div>
-    <div  class="imagery">
-    <!--  <img src="assets/images/cryptocircle.png" alt="" width="100%"> -->
-      <img src="assets/images/florid-crypto-wallet-and-online-banking.gif" alt="">
-      <div class="shadow"></div>
+
+  </div>
+  <svg style="margin-top: -10px;" width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+    .path-0{
+      animation:pathAnim-0 4s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    @keyframes pathAnim-0{
+      0%{
+        d: path("M 0,400 L 0,150 C 213.86666666666667,129.46666666666667 427.73333333333335,108.93333333333332 565,106 C 702.2666666666667,103.06666666666668 762.9333333333334,117.73333333333332 896,128 C 1029.0666666666666,138.26666666666668 1234.5333333333333,144.13333333333333 1440,150 L 1440,400 L 0,400 Z");
+      }
+      25%{
+        d: path("M 0,400 L 0,150 C 185.06666666666666,159.2 370.1333333333333,168.4 534,183 C 697.8666666666667,197.6 840.5333333333333,217.6 988,213 C 1135.4666666666667,208.4 1287.7333333333333,179.2 1440,150 L 1440,400 L 0,400 Z");
+      }
+      50%{
+        d: path("M 0,400 L 0,150 C 162.13333333333333,135.73333333333335 324.26666666666665,121.46666666666667 480,134 C 635.7333333333333,146.53333333333333 785.0666666666666,185.86666666666665 944,193 C 1102.9333333333334,200.13333333333335 1271.4666666666667,175.06666666666666 1440,150 L 1440,400 L 0,400 Z");
+      }
+      75%{
+        d: path("M 0,400 L 0,150 C 122.66666666666663,148.66666666666666 245.33333333333326,147.33333333333331 399,154 C 552.6666666666667,160.66666666666669 737.3333333333335,175.33333333333334 916,176 C 1094.6666666666665,176.66666666666666 1267.3333333333333,163.33333333333331 1440,150 L 1440,400 L 0,400 Z");
+      }
+      100%{
+        d: path("M 0,400 L 0,150 C 213.86666666666667,129.46666666666667 427.73333333333335,108.93333333333332 565,106 C 702.2666666666667,103.06666666666668 762.9333333333334,117.73333333333332 896,128 C 1029.0666666666666,138.26666666666668 1234.5333333333333,144.13333333333333 1440,150 L 1440,400 L 0,400 Z");
+      }
+    }</style><defs><linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="5%" stop-color="#020123"></stop><stop offset="95%" stop-color="#090979"></stop></linearGradient></defs><path d="M 0,400 L 0,150 C 213.86666666666667,129.46666666666667 427.73333333333335,108.93333333333332 565,106 C 702.2666666666667,103.06666666666668 762.9333333333334,117.73333333333332 896,128 C 1029.0666666666666,138.26666666666668 1234.5333333333333,144.13333333333333 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+
+  <div class="testimonials" style="text-align: center;">
+    <h2 style="color: #020123;">Testimonials</h2>
+
+    <div class="test-container">
+      <div class="testimonial">
+        <div class="id-photo"> <img src="../../../assets/images/Achhraf.png" width="100%" height="auto" alt=""> </div>
+        <div><p>"One of the best platforms i have ever used!"</p> <br> <h6>Achraf Muhammadi</h6></div>
+      </div>
+
     </div>
   </div>
-
-</div>
-
+  </div>
 <app-sign-in [ngStyle]="{display : showme ? 'flex' : 'none'}"></app-sign-in>

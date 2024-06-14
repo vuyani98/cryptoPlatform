@@ -9,14 +9,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
 import { AuthModule } from '../auth/auth.module';
 import { RealTimeChartComponent } from '../widgets/real-time-chart/real-time-chart.component';
-
+import { TickerTapeComponent } from '../widgets/ticker-tape/ticker-tape.component';
+import { StockMarketComponent } from '../widgets/stock-market/stock-market.component';
 
 
 @NgModule({
   declarations: [
     LandingComponent,
     DashboardComponent,
-    RealTimeChartComponent
+    RealTimeChartComponent,
+    TickerTapeComponent,
+    StockMarketComponent
   ],
   imports: [
     CommonModule,
