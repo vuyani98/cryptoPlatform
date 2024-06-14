@@ -3,5 +3,5 @@ export const loginStatus = {
 }
 export const environment = {
   production: true,
-  API_PATH: ''
+  API_PATH: 'https://cryptoplatform.onrender.com:3000'
 };
