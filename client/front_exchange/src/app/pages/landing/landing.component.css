@@ -89,6 +89,10 @@ h2{
 
 }
 
+.mozilla-marg{
+  margin-top: -53px;
+}
+
 .shadow{
   background-color: #cbcbcb;
   width: 55%;
@@ -100,7 +104,7 @@ h2{
 .opportunity{
   display: flex;
   align-items: center;
-  background: url(../../../assets/images/noisebg.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../../../assets/images/noisebg.png);
   border-radius: 20px;
   color: #020123;
   padding: 20px;
@@ -110,6 +114,7 @@ h2{
   font-family: "Roboto";
   box-shadow: 6px 5px 0px 1px black;
 }
+
 .mono {
   font-family: 'Roboto Mono';
 }
@@ -143,7 +148,7 @@ h2{
   border-radius: 15px;
   width: 45%;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   margin-top: 70px;
 }
 
@@ -173,7 +178,24 @@ h2{
   margin: 0;
 }
 
+a{
+  color: white;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+a:hover{
+  color: #3867d6;
+}
+
+
+
 @media (max-width : 744px) {
+  .hero{
+    height: 75vh;
+  }
 
   .container{
     flex-wrap: wrap-reverse;
@@ -193,12 +215,12 @@ h2{
   }
 
   #wave{
-    margin-top: 0px;
+    margin-top: 80px;
   }
 
   .opportunity{
     flex-wrap: wrap;
-    width: 75%;
+    width: 85%;
   }
 
   .reverse{

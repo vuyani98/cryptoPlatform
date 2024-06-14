@@ -5,9 +5,9 @@
     <div class="container">
       <div class="heading" style="width: 100%;">
 
-        <h1 style="margin-bottom: 0px;"> <span class="black gradient-text">Empower Your Wealth:</span> </h1>   <h1 class="thin" style=" margin-top: 0px;">Where opportunities thrive!</h1>
+        <h1 style="margin-bottom: 0px;"> <span class="black gradient-text">Empower Your Wealth:</span> </h1>   <h1 class="black" style=" margin-top: 0px;">Where opportunities thrive!</h1>
         <h5 class="thin">Discover private lending networks, professionally managed funds, crypto and digital currency trading for remarkable returns. </h5>
-        <button mat-flat-button class="hero-button" href="#opp" style="margin-right: 10px; background-color: #090979;">learn more <fa-icon [icon]="faArrowDown"></fa-icon></button>
+        <button mat-flat-button class="hero-button" style="margin-right: 10px; background-color: #090979;"> <a href="#opp">learn more <fa-icon [icon]="faArrowDown"></fa-icon></a></button>
         <button mat-flat-button class="hero-button" routerLink="auth/signup"  style="background-color: #1498eb;">invest today <fa-icon [icon]="faArrowRight"></fa-icon> </button>
       </div>
       <div  class="imagery">
@@ -44,14 +44,14 @@
         }
       }</style><defs><linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="5%" stop-color="#020024"></stop><stop offset="95%" stop-color="#090979"></stop></linearGradient></defs><path d="M 0,400 L 0,150 C 143.46666666666664,166.66666666666666 286.9333333333333,183.33333333333331 435,183 C 583.0666666666667,182.66666666666669 735.7333333333333,165.33333333333334 904,157 C 1072.2666666666667,148.66666666666666 1256.1333333333332,149.33333333333331 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
   </div>
- <div class="mozilla-marg" style="margin-top: -46px; text-align: center; background: #020024;">
+ <div class="mozilla-marg" style="text-align: center; background: #020024;">
 
     <h2 style="font-family: 'Roboto'; color: #ffffffcf;" id="opp">Featured Opportunities</h2>
 
     <div id="ticker" style="margin-top: 80px;"></div>
     <app-ticker-tape></app-ticker-tape>
 
-    <div style="display: flex; flex-direction: column; padding: 20px;">
+    <div id="opp" style="display: flex; flex-direction: column; padding: 20px;">
 
 
       <div class="opportunity reverse" style="display: flex;">
@@ -127,11 +127,14 @@
   <div class="testimonials" style="text-align: center;">
     <h2 style="color: #020123;">Testimonials</h2>
 
-    <div class="test-container">
+    <div class="test-container" style="display: flex; justify-content: center; align-items: center;">
+
+      <fa-icon [icon]="faAngleLeft" style="margin-right: 10px;"></fa-icon>
       <div class="testimonial">
         <div class="id-photo"> <img src="../../../assets/images/Achhraf.png" width="100%" height="auto" alt=""> </div>
         <div><p>"One of the best platforms i have ever used!"</p> <br> <h6>Achraf Muhammadi</h6></div>
       </div>
+      <fa-icon [icon]="farAngleRight" style="margin-left: 10px;"></fa-icon>
 
     </div>
   </div>
