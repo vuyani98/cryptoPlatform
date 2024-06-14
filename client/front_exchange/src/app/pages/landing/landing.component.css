@@ -1,17 +1,62 @@
-.hero{
-  background: url('../../../assets/images/noisebg.png') center center fixed;
+.landing{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 90vh;
-  padding: 20px;
   overflow: hidden;
+}
+
+.hero{
+  height: 90vh;
   display: flex;
 }
+
 h1{
   font-size: 4vw !important;
 }
+
+h2{
+  font-size: 3vw !important;
+}
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(90deg, rgb(9 9 121) 1.64%, rgb(20 152 235) 50% , rgb(150, 45, 227) 100%);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.new-container{
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.new-container > h1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #ffffff82;;
+}
+
  .container{
     display: flex;
     flex-wrap: no;
@@ -27,10 +72,10 @@ h1{
 }
 
 .hero-button{
-    background: linear-gradient(90deg, rgb(20, 152, 235) 1.64%, rgb(150, 45, 227) 100%);
     color: white !important;
     border: none;
-    font-family: 'Roboto Mono';
+    border-radius: 6px;
+    font-family: Poppins;
     padding: 8px 16px 8px 16px;
 }
 
@@ -52,6 +97,82 @@ h1{
   backdrop-filter: blur(21px);
 }
 
+.opportunity{
+  display: flex;
+  align-items: center;
+  background: url(../../../assets/images/noisebg.png);
+  border-radius: 20px;
+  color: #020123;
+  padding: 20px;
+  width: 65%;
+  margin: auto;
+  margin-top: 79px;
+  font-family: "Roboto";
+  box-shadow: 6px 5px 0px 1px black;
+}
+.mono {
+  font-family: 'Roboto Mono';
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header > img {
+  height: 40px;
+  margin-left: 7px;
+}
+.opp-container > p{
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.opp-illustration > img{
+  height: 250px;
+}
+
+#wave {
+  margin-top: -150px;
+}
+
+.test-container{
+  background-color: white;
+  border-radius: 15px;
+  width: 45%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 70px;
+}
+
+.testimonial{
+  backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  background: radial-gradient(circle, rgb(20 152 235 / 20%) 0%, rgb(9 9 121 / 20%) 0%, rgb(2 0 36 / 20%) 100%);
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #00000052;
+  color: #020123;
+  font-family: 'Roboto';
+  font-size: 14px;
+}
+
+.id-photo{
+  width: 10%;
+}
+
+.testimonial img {
+  border-radius: 50%;
+}
+
+.testimonial h6, .testimonial p {
+  margin: 0;
+}
+
 @media (max-width : 744px) {
 
   .container{
@@ -65,5 +186,48 @@ h1{
 
   h1{
     font-size: 7vw !important;
+  }
+
+  h2{
+    font-size: 6vw !important;
+  }
+
+  #wave{
+    margin-top: 0px;
+  }
+
+  .opportunity{
+    flex-wrap: wrap;
+    width: 75%;
+  }
+
+  .reverse{
+    flex-direction: column-reverse;
+  }
+
+  .header{
+    font-size: 16px;
+  }
+
+  .opp-illustration > img {
+    height: auto;
+    width: 100%;
+  }
+
+  .test-container{
+    width: 75%;
+  }
+  .testimonial{
+    flex-direction: column;
+  }
+
+  .id-photo{
+    width: 25%;
+  }
+}
+
+@-moz-document url-prefix() {
+  .mozilla-marg{
+    margin-top: -55px !important;
   }
 }
