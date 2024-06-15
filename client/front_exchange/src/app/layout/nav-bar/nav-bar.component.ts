@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
-import { loginStatus } from '../../../environments/environments.development';
+import { loginStatus } from '../../../environments/environment.development';
 import { trigger, state, style, animate, transition, keyframes, query, stagger, group } from '@angular/animations';
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterOutlet, Router } from '@angular/router';
-import { loginStatus } from '../environments/environments.development';
+import { loginStatus } from '../environments/environment.development';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { loginStatus } from '../../../environments/environments.development';
+import { loginStatus } from '../../../environments/environment.development';
 import { SignInComponent } from '../../auth/sign-in/sign-in.component';
 import { AuthModule } from '../../auth/auth.module';
 import { faArrowDown, faArrowRight, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
