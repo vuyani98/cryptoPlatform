@@ -2,7 +2,7 @@ import { Component, ElementRef, Renderer2, OnInit, AfterViewInit, HostListener, 
 import { Router } from '@angular/router';
 import { faPiggyBank, faWallet} from '@fortawesome/free-solid-svg-icons';
 import { RealTimeChartComponent } from '../../widgets/real-time-chart/real-time-chart.component';
-import { loginStatus } from '../../../environments/environment.prod';
+import { loginStatus } from '../../../environments/environment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -81,5 +81,5 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.bodyClickListener) {
         this.bodyClickListener();
     }
-}
+  }
 }
