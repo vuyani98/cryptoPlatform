@@ -1,6 +1,8 @@
 import { Component, ElementRef, Renderer2, OnInit, AfterViewInit, HostListener, OnDestroy, ChangeDetectorRef} from '@angular/core';
+import { Router } from '@angular/router';
 import { faPiggyBank, faWallet} from '@fortawesome/free-solid-svg-icons';
 import { RealTimeChartComponent } from '../../widgets/real-time-chart/real-time-chart.component';
+import { loginStatus } from '../../../environments/environment.prod';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -24,13 +26,15 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     }`
 
 
-  constructor( private element : ElementRef, private renderer: Renderer2, private cdref: ChangeDetectorRef){
+  constructor( private element : ElementRef, private renderer: Renderer2, private cdref: ChangeDetectorRef, private router: Router){
   }
 
   ngOnInit(): void {
 
-
-   this.loadScript(this.src, this.html)
+    if(localStorage.getItem('isLoggedin') != 'true'){
+      this.router.navigateByUrl('/auth/login')
+    }
+   // this.loadScript(this.src, this.html)
   }
 
 

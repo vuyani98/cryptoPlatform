@@ -1,3 +1,93 @@
 app-dashboard{
   background-image: url('../../../assets/images/noisebg.png');
 }
+
+.dash-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #020123;
+  margin-top: 50px;
+}
+.heading{
+  font-family: 'Roboto Black';
+}
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(90deg, rgb(9 9 121) 1.64%, rgb(20 152 235) 50% , rgb(150, 45, 227) 100%);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.dashboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: unset;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.wallet-assets{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.wallet-btn{
+  border: none;
+  padding: 7px;
+  font-family: 'Roboto Mono';
+  color: #b3b5c5;
+  box-shadow: 4px 3px 2px #cccdd3;
+}
+
+.assets{
+  padding: 10px;
+  height: 85px;
+  width: 200px;
+  border: 3px solid #cccdd3;
+  margin: 7px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono';
+  color: #b8b9bf;
+}
+#market-overview{
+  width: 80vw;
+  height: 530px;
+}
+
+@media (max-width: 744px){
+
+  .dashboard{
+    padding: 0px;
+  }
+  .wallet-assets{
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  #market-overview{
+    width: 95%;
+  }
+}
