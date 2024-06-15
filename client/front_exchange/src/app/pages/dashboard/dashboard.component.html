@@ -1,20 +1,37 @@
-<div  style="background-color:#2b2e4a">
-  <h1>Dashboard</h1>
-  <div style="display: flex; justify-content: space-around;">
-    <div style="text-align: center; font-family: 'Roboto Thin'; color: white;">
-      <h3>Wallet</h3>
-      <div><fa-icon class="fa-10x fa-light" [icon]="faWallet"></fa-icon> </div>
-      <button>Link Wallet</button>
+<div class="dash-container">
+  <!-- <h1 class="heading gradient-text">Dashboard</h1> -->
+
+  <div class="dashboard">
+    <div class="wallet-assets">
+
+      <div style="font-family: 'Roboto Black'; color: #020222;">
+        <h3>Wallet</h3>
+          <div><fa-icon class="fa-5x fa-light" [icon]="faWallet" style="color: #02022233;"></fa-icon> </div>
+          <div><button class="wallet-btn">link wallet</button> </div>
+      </div>
+
+      <div style="font-family: 'Roboto Black'; color: #020222;">
+        <h3>Assets</h3>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <div><fa-icon class="fa-5x fa-light" [icon]="faPiggyBank" style="color: #02022233;"></fa-icon></div>
+          <div class="assets">
+            <p>No Assets</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div style="text-align: center; font-family: 'Roboto Thin'; color: white;">
-      <h3>Assets</h3>
-      <div><fa-icon class="fa-10x fa-light" [icon]="faPiggyBank"></fa-icon></div>
-      <p>No Assets</p>
+
+    <!-- TradingView Widget BEGIN -->
+    <div id="market-overview">
+      <h3>Market Overview</h3>
     </div>
+    <app-market-overview></app-market-overview>
+
+  </div>
+  <div style="color: white; margin-top: 80px; font-family: 'Roboto';">
+    <button mat-flat-button class="hero-button" style="margin-right: 10px; background-color: #090979; padding: 7px;">BUY</button>
+    <button mat-flat-button class="hero-button" routerLink="auth/signup"  style="background-color: #1498eb; padding: 7px;">SELL</button>
   </div>
 </div>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget" ></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>
-</div>
+
+

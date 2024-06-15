@@ -4,7 +4,8 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { catchError } from 'rxjs';
-
+import { loginStatus } from '../../../environments/environment.prod';
+import { faTrainSubway } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -12,6 +13,7 @@ import { catchError } from 'rxjs';
 })
 export class SignInComponent {
 
+  isLoggedin : boolean;
   loginError = false;
   errorMessage = '';
   falseOTP= false;
@@ -24,6 +26,7 @@ export class SignInComponent {
   otpForm = this.formBuilder.group({ otp : null });
 
   constructor( private formBuilder: FormBuilder, private auth: AuthService, private route: Router){
+    this.isLoggedin = loginStatus.isLoggedIn;
     this.otp = 0;
   }
 
@@ -33,15 +36,16 @@ export class SignInComponent {
 
         //if user exists and password is correct
         if(res.user){
-          console.log(res.user)
+          localStorage.setItem('user', res.user);
           this.otp = Math.floor(Math.random()* 100000);
           emailjs.init({publicKey: "lkJc_8qBJxeyqufB9"});
           emailjs.send("service_hh2kq6e","template_zqxv5zr", {
             otp: this.otp,
-            receiver: /*"nvuyani307@gmail.com"*/res.user,
+            receiver: res.user,
           }).then(data => {
             if (data.text == 'OK'){
               this.showOTPform = true;
+
             }
           }).catch(err => {
             console.log(err.text);
@@ -64,7 +68,11 @@ export class SignInComponent {
   onConfirm(){
 
     if(this.otp == this.otpForm.controls.otp.value){
+      loginStatus.isLoggedIn = true;
+      this.isLoggedin = true;
+      localStorage.setItem('isLoggedin', `${this.isLoggedin}`)
       this.route.navigateByUrl('dashboard');
+
     }
     else{
       this.falseOTP = true;

@@ -11,6 +11,7 @@ import { AuthModule } from '../auth/auth.module';
 import { RealTimeChartComponent } from '../widgets/real-time-chart/real-time-chart.component';
 import { TickerTapeComponent } from '../widgets/ticker-tape/ticker-tape.component';
 import { StockMarketComponent } from '../widgets/stock-market/stock-market.component';
+import { MarketOverviewComponent } from '../widgets/market-overview/market-overview.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StockMarketComponent } from '../widgets/stock-market/stock-market.compo
     DashboardComponent,
     RealTimeChartComponent,
     TickerTapeComponent,
-    StockMarketComponent
+    StockMarketComponent,
+    MarketOverviewComponent
   ],
   imports: [
     CommonModule,
