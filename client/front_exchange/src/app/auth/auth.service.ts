@@ -20,6 +20,7 @@ export class AuthService {
   }
 
   login(details : Object): Observable<any>{
+    console.log(`Production: ${environment.production}`)
     return this.http.post(`${API_PATH}/login`, details);
   }
 }
