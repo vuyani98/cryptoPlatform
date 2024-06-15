@@ -4,7 +4,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { catchError } from 'rxjs';
-import { loginStatus } from '../../../environments/environment.prod';
+import { loginStatus } from '../../../environments/environment';
 import { faTrainSubway } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-sign-in',
